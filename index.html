@@ -11,8 +11,121 @@
     </head>
 
     <body>
+
+      <!--Double navigation-->
+      <header>
+          <!-- Sidebar navigation -->
+
+          <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
+              <!-- Logo -->
+              
+              <!--/. Logo -->
+              <!--Social-->
+              
+              <!--/Social-->
+              <!--Search Form-->
+              <li>
+                  <form>
+                    <div class="input-field blue">
+                      <input placeholder="RSO Name..." id="search" type="search" required>
+                    </div>
+                  </form>
+              </li>
+              <!--/.Search Form-->
+              <!-- Side navigation links -->
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select multiple>
+                              <option value="" disabled selected>Choose RSO category</option>
+                              <option value="1">Sports</option>
+                              <option value="2">Academics</option>
+                              <option value="3">Honors</option>
+                            </select>
+                            <label>Category</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select>
+                              <option value="" disabled selected>Choose time commitment</option>
+                              <option value="1">Low</option>
+                              <option value="2">Medium</option>
+                              <option value="3">High</option>
+                            </select>
+                            <label>Time Commitment</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select>
+                              <option value="" disabled selected>How much are you willing to pay?</option>
+                              <option value="1">20 or less</option>
+                              <option value="2">20 to 40</option>
+                              <option value="3">more than 40</option>
+                            </select>
+                            <label>Collects dues?</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+
+              <li>
+                <a class="waves-effect waves-light btn red"><i class="material-icons left">search</i>Search RSOs</a>
+              </li>
+              <!--/. Side navigation links -->
+              <div class="sidenav-bg mask-strong"></div>
+          </ul>
+          <!--/. Sidebar navigation -->
+          <!-- Navbar -->
+          <nav>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+          <div class="nav-wrapper blue">
+            <a href="#" class="brand-logo right">RSOsaurus</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li><a href="sass.html">Sass</a></li>
+              <li><a href="badges.html">Components</a></li>
+              <li><a href="collapsible.html">JavaScript</a></li>
+            </ul>
+          </div>
+        </nav>
+          <!-- /.Navbar -->
+      </header>
+      <!--/.Double navigation-->
+      <!--Main layout-->
+      <main>
+          
+      </main>
+      <!--/Main layout-->
+
+      <!--Footer-->
+      <footer>
+
+      </footer>
+      <!--Footer--> 
+
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script>
+      // Initialize collapse button
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+        // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+        });
+      </script>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      
     </body>
   </html>
