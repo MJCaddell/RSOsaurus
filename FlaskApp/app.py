@@ -10,6 +10,7 @@ app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 conn = mdb.connect( host = "localhost",
              user = "root",
+             passwd = "root",
              db = "RSOsaurusDB")
 
 cursor = conn.cursor()
@@ -17,7 +18,9 @@ cursor = conn.cursor()
 @app.route("/")
 def main():
     cursor.execute("SELECT * FROM rsoInfo")
-    return (str(cursor.rowcount))
+    data = cursor.fetchall()  
+    print data
+    return render_template('index.html', data = data)
 
 if __name__ == "__main__":
     app.run()
