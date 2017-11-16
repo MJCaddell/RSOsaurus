@@ -164,34 +164,58 @@
           {% for i in range(0,data|length,2) %}
             <div class="row">
               <div class="col s12 m6">
-                <a href="#">
-                  <div class="card" style="width: 100%;">
-                    <div class="card-image" style="height: 220px; width: 100%; overflow: hidden">
+                <div class="card" style="width: 100%;">
+                  <a href="rso?name={{ data[i][0] }}" id="rsoLink" name="{{ data[i][0] }}" >
+                    <div class="card-image waves-effect waves-block waves-light" style="height: 180px; width: 100%; overflow: hidden">
                       <img src="../static/cycle.jpg">
-                      <span class="card-title">
-                        <p>{{ data[i][0] }}</p>
-                        <p style="font-size: 16px">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                      </span>
+                      <span class="card-title">{{ data[i][0] }}</span>
                     </div>
+                  </a>
+                  <div class="card-content">
+                    <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">I am a very simple card. I am good at containing small bits ...<i class="material-icons right">more_vert</i></span>
                   </div>
-                </a>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ data[i][0] }}<i class="material-icons right">close</i></span>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                </div>
               </div>
-
 
               {% if data|length > i+1 %}
               <div class="col s12 m6">
-                <a href="#">
-                  <div class="card" style="width: 100%;">
-                    <div class="card-image" style="height: 220px; width: 100%; overflow: hidden">
-                      <img src="http://nanaimomountainbikeclub.com/new/wp-content/uploads/2012/08/Feb.-15-020-1024x768.jpg">
-                      <span class="card-title">
-                        <p>{{ data[i+1][0] }}</p>
-                        <p style="font-size: 16px">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                      </span>
+                <div class="card" style="width: 100%;">
+                  <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
+                    <div class="card-image waves-effect waves-block waves-light" style="height: 180px; width: 100%; overflow: hidden">
+                      <img src="../static/cycle.jpg">
+                      <span class="card-title">{{ data[i+1][0] }}</span>
                     </div>
+                  </a>
+                  <div class="card-content">
+                    <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">I am a very simple card. I am good at containing small bits ...<i class="material-icons right">more_vert</i></span>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ data[i+1][0] }}<i class="material-icons right">close</i></span>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                </div>
+              </div>
+              <!--
+              <div class="col s12 m6">
+                <a href="#">
+									<div class="card" style="width: 100%;">
+                    <a id="rsoLink", style="height: 100%; width: 100%", name={{ data[i+1][0] }} >
+                      <div class="card-image" style="height: 220px; width: 100%; overflow: hidden">
+                        <img src="http://nanaimomountainbikeclub.com/new/wp-content/uploads/2012/08/Feb.-15-020-1024x768.jpg">
+                        <span class="card-title">
+                          <p>{{ data[i+1][0] }}</p>
+                          <p style="font-size: 16px">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        </span>
+                      </div>
+                    </a>
                   </div>
                 </a>
               </div>
+              -->
               {% endif %}
             </div>
           {% endfor %}
@@ -294,6 +318,24 @@
                     }
                 });
             });
+        });
+        $(function() {
+          $('#rsoLink').click(function() {
+            console.log("RETRIEVING RSO INFO FOR PAGE")
+            $.ajax({
+              url: '/rso',
+              data: {
+                name: $(this).attr('name')
+              },
+              type: 'GET',
+              success: function(response) {
+                console.log(response);
+              },
+              error: function(error) {
+                console.log(error);
+              }
+            });
+          });
         });
         });
       </script>

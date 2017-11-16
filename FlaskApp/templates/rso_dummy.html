@@ -4,8 +4,8 @@
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="local.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="../static/local.css"  media="screen,projection"/>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -21,7 +21,7 @@
               <!-- Logo -->
               <li>
                   <div class="logo-wrapper waves-light">
-                      <a href="#"><img src="images/logo.png" class="responsive-img"></a>
+                      <a href="#"><img src="../static/images/logo.png" class="responsive-img"></a>
                   </div>
               </li>
               <!--/. Logo -->
@@ -157,14 +157,14 @@
           </div>
           <!-- /.Navbar -->
         <div class="row">
-          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Category: XYZ</p>
-          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Meeting Time: Monday 6pm</p>
-          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Time Commitment: 2hrs</p>
-          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Dues Collected: $30</p>
-          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Activity Level: Green Dot</p>
-          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Longevity: Since 1847</p>
-          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Members/Max Members</p>
-          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Has Recuitment Process: Yes</p>
+          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Category: {{ data[0][1] }}</p>
+          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Meeting Time: {{ data[0][3] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Time Commitment: {{ data[0][2] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Dues Collected: ${{ data[0][4] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Activity Level: {{ data[0][5] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Longevity: {{ data[0][6] }}</p>
+          <p class="col l2" id="lim_mem" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px"></p>
+          <p class="col l2" id="recruit" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px"></p>
         </div>
       </header>
       <!--/.Double navigation-->
@@ -196,10 +196,10 @@
             <h4 align="center">Key Members</h4>
             <div class="row">
               <div class="col s12 m6">
-                <img class="materialboxed" data-caption="This is our President, Lord, and Savior, the Happy Nerd Man." width="250" src="images/member_img_1.jpg">
+                <img class="materialboxed" data-caption="This is our President, Lord, and Savior, the Happy Nerd Man." width="250" src="../static/images/member_img_1.jpg">
               </div>
               <div class="col s12 m6">
-                <img class="materialboxed" data-caption="Smile's are wonderful members." width="250" src="images/member_img_2.jpg">
+                <img class="materialboxed" data-caption="Smile's are wonderful members." width="250" src="../static/images/member_img_2.jpg">
               </div>
             </div>
             <h5 align="center">Contact Info</h5>
@@ -219,7 +219,7 @@
 
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="../static/js/materialize.min.js"></script>
       <script>
       // Initialize collapse button
       $(document).ready(function(){
@@ -230,10 +230,24 @@
         });
       </script>
       <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="node_modules/materialize-css/dist/css/materialize.css">
+      <link rel="stylesheet" href="../static/node_modules/materialize-css/dist/css/materialize.css">
 
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+      <!-- Load in binary info into categories -->
+      <script type="text/javascript">
+        window.onload = function() {
+          if ({{ data[0][7] }} == 0)
+            document.getElementById('lim_mem').innerHTML = "Limited Spots: No"
+          if ({{ data[0][7] }} == 1)
+            document.getElementById('lim_mem').innerHTML = "Limited Spots: Yes"
+          if ({{ data[0][8] }} == 0)
+            document.getElementById('recruit').innerHTML = "Recruits: No"
+          if ({{ data[0][8] }} == 1)
+            document.getElementById('recruit').innerHTML = "Recruits: Yes"
+        }
+      </script>
       
     </body>
   </html>
