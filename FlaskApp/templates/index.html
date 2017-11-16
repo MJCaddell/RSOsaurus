@@ -4,7 +4,7 @@
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="../static/css/materialize.css"  media="screen,projection"/>
       <link type="text/css" rel="stylesheet" href="../static/local.css"  media="screen,projection"/>
 
       <!--Let browser know website is optimized for mobile-->
@@ -17,12 +17,13 @@
       <header>
           <!-- Sidebar navigation -->
 
+          <form class="form-search">
           <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
               <!-- Logo -->
               <li>
-                  <div class="logo-wrapper waves-light">
-                      <a href="#"><img src="../static/images/logo.png" class="responsive-img"></a>
-                  </div>
+                <div class="logo-wrapper waves-light">
+                    <a href="#"><img src="../static/images/logo.png" class="responsive-img"></a>
+                </div>
               </li>
               <!--/. Logo -->
               <!--Social-->
@@ -30,24 +31,22 @@
               <!--/Social-->
               <!--Search Form-->
               <li>
-                  <form>
-                    <div class="input-field gray">
-                      <input placeholder="RSO Name..." id="search" type="search" required>
-                    </div>
-                  </form>
+                <div class="input-field gray">
+                  <input placeholder="RSO Name..." id="search" name="search" type="search" required>
+                </div>
               </li>
               <!--/.Search Form-->
               <!-- Side navigation links -->
               <li>
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10">
-                            <select multiple>
+                            <select multiple id="category" name="category">
                               <option value="" disabled selected>Choose RSO category</option>
-                              <option value="1">Sports</option>
-                              <option value="2">Academics</option>
-                              <option value="3">Honors</option>
+                              <option value="Sports">Sports</option>
+                              <option value="Academics">Academics</option>
+                              <option value="Honors">Honors</option>
                             </select>
-                            <label>Category</label>
+                            <label for="category">Category</label>
                           </div>
                       </li>
                   </ul>
@@ -55,7 +54,7 @@
               <li>
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10">
-                            <select>
+                            <select id="time_commitment" name="time_commitment">
                               <option value="" disabled selected>Choose time commitment</option>
                               <option value="1">Low</option>
                               <option value="2">Medium</option>
@@ -69,7 +68,7 @@
               <li>
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10">
-                            <select multiple>
+                            <select multiple id="meeting_time" name="meeting_time">
                               <option value="" disabled selected>Anytime</option>
                               <option value="1">Sports</option>
                               <option value="2">Academics</option>
@@ -83,7 +82,7 @@
               <li>
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10">
-                            <select>
+                            <select id="collected_dues" name="collected_dues">
                               <option value="" disabled selected>How much are you willing to pay?</option>
                               <option value="1">20 or less</option>
                               <option value="2">20 to 40</option>
@@ -97,7 +96,7 @@
               <li>
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10">
-                            <select>
+                            <select id="level_of_activity" name="level_of_activity">
                               <option value="" disabled selected>Don't care</option>
                               <option value="1">Low</option>
                               <option value="2">Medium</option>
@@ -112,7 +111,7 @@
               <li>
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10">
-                            <select>
+                            <select id="longevity" name="longevity">
                               <option value="" disabled selected>Don't care</option>
                               <option value="1">Old</option>
                               <option value="2">New</option>
@@ -124,24 +123,23 @@
               </li>
 
               <li>
-                <form action="#">
-                    <p>
-                      <input type="checkbox" id="limited_membership" />
-                      <label for="limited_membership">Limited Membership</label>
-                    </p>
-                    <p>
-                      <input type="checkbox" id="recruitment_process" />
-                      <label for="recruitment_process">Recruitment Process</label>
-                    </p>
-                  </form>
+                  <p>
+                    <input type="checkbox" id="limited_membership" name="limited_membership" />
+                    <label for="limited_membership">Limited Membership</label>
+                  </p>
+                  <p>
+                    <input type="checkbox" id="recruitment_process" name="recruitment_process"/>
+                    <label for="recruitment_process">Recruitment Process</label>
+                  </p>
               </li>
 
               <li>
-                <a class="waves-effect waves-light btn red"><i class="material-icons">search</i>Search RSOs</a>
+                <a id="btnSearch" class="waves-effect waves-light btn red"><i class="material-icons">search</i>Search RSOs</a>
               </li>
               <!--/. Side navigation links -->
               <div class="sidenav-bg mask-strong"></div>
           </ul>
+        </form>
           <!--/. Sidebar navigation -->
           <!-- Navbar -->
           <!-- ADD <div class="navbar-fixed"> TO MAKE THE NAVBAR FIXED. -->
@@ -162,69 +160,46 @@
       <main>
 
         <h3>Relevant</h3>
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+        <div id="relevant_rsos">
+          {% for i in range(0,data|length,2) %}
+            <div class="row">
+              <div class="col s12 m6">
+                <a href="#">
+                  <div class="card" style="width: 100%;">
+                    <div class="card-image" style="height: 220px; width: 100%; overflow: hidden">
+                      <img src="../static/cycle.jpg">
+                      <span class="card-title">
+                        <p>{{ data[i][0] }}</p>
+                        <p style="font-size: 16px">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                      </span>
+                    </div>
+                  </div>
+                </a>
               </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <div class="row">
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
+              {% if data|length > i+1 %}
+              <div class="col s12 m6">
+                <a href="#">
+                  <div class="card" style="width: 100%;">
+                    <div class="card-image" style="height: 220px; width: 100%; overflow: hidden">
+                      <img src="http://nanaimomountainbikeclub.com/new/wp-content/uploads/2012/08/Feb.-15-020-1024x768.jpg">
+                      <span class="card-title">
+                        <p>{{ data[i+1][0] }}</p>
+                        <p style="font-size: 16px">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                      </span>
+                    </div>
+                  </div>
+                </a>
               </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
+              {% endif %}
             </div>
-          </div>
-
-          <div class="col s12 m6">
-            <div class="card blue-grey darken-1">
-              <div class="card-content white-text">
-                <span class="card-title">Card Title</span>
-                <p>I am a very simple card. I am good at containing small bits of information.
-                I am convenient because I require little markup to use effectively.</p>
-              </div>
-              <div class="card-action">
-                <a href="#">This is a link</a>
-                <a href="#">This is a link</a>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
 
         <h3>Less Relevant</h3>
 
-        <div class="row">
+        <div class="row" style="height:10px;">
           <div class="col s12 m3">
             <div class="card blue-grey darken-1">
               <div class="card-content white-text">
@@ -299,11 +274,32 @@
       $(document).ready(function(){
         $(".button-collapse").sideNav();
         $('select').material_select();
-        // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+
+        $(function() {
+            $('#btnSearch').click(function() {
+                console.log("GET DATA")
+                console.log($('form'))
+                $.ajax({
+                    url: '/search',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response) {
+                        console.log(response);
+                        $("#relevant_rsos").empty();
+                        $("#relevant_rsos").append(response);
+
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
         });
       </script>
       <!-- Compiled and minified CSS -->
       <link rel="stylesheet" href="../static/node_modules/materialize-css/dist/css/materialize.css">
+
 
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>

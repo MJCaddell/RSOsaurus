@@ -2139,16 +2139,6 @@
   color: transparent !important;
 }
 
-header, main, footer, slide-out {
-  padding-left: 300px;
-}
-
-@media only screen and (max-width : 992px) {
-  header, main, footer, slide-out {
-    padding-left: 0;
-  }
-}
-
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Set default font family to sans-serif.
@@ -7010,7 +7000,6 @@ select {
   width: 100%;
   pointer-events: none;
 }
-
 .select-wrapper input.select-dropdown {
   position: relative;
   cursor: pointer;

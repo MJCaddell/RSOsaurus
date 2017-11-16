@@ -1,0 +1,34 @@
+{% for i in range(0,data|length,2) %}
+  <div class="row">
+    <div class="col s12 m6">
+      <a href="#">
+        <div class="card" style="width: 100%;">
+          <div class="card-image" style="height: 220px; width: 100%; overflow: hidden">
+            <img src="../static/cycle.jpg">
+            <span class="card-title">
+              <p>{{ data[i][0] }}</p>
+              <p style="font-size: 16px">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+    {% if data|length > i+1 %}
+    <div class="col s12 m6">
+      <a href="#">
+        <div class="card" style="width: 100%;">
+          <div class="card-image" style="height: 220px; width: 100%; overflow: hidden">
+            <img src="http://nanaimomountainbikeclub.com/new/wp-content/uploads/2012/08/Feb.-15-020-1024x768.jpg">
+            <span class="card-title">
+              <p>{{ data[i+1][0] }}</p>
+              <p style="font-size: 16px">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endif %}
+  </div>
+{% endfor %}
