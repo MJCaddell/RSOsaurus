@@ -9,6 +9,22 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+      <script src='lib/jquery.min.js'></script>
+      <script src='lib/moment.min.js'></script>
+      <script src='fullcalendar/fullcalendar.js'></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+
+            // page is now ready, initialize the calendar...
+
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+            })
+
+        });
+      </script>
     </head>
 
     <body>
@@ -173,14 +189,14 @@
         <div class="row">
           <div class="col s12 m6">
             <div class="video-container">
-              <iframe width="853" height="480" src="https://www.youtube.com/embed/mkggXE5e2yk" frameborder="0" allowfullscreen></iframe>
+              <iframe id= "youtubeVid" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
 
           <div class="col s12 m6">
-            <h4 align="center">Description</h4>
+            <h4 align="center">{{ data[0][0] }}</h4>
             <span font-size=8px>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a auctor arcu, quis malesuada velit. Duis posuere velit at ultricies mollis. Donec sed pretium nisl, ac malesuada eros. Nullam tortor est, venenatis at erat vel, euismod ornare quam. Phasellus finibus in neque convallis dictum. Vivamus eget sem at metus sodales molestie vel in enim. Integer gravida semper metus id posuere. Nullam dui dui, scelerisque et sollicitudin ut, ultricies ut tortor. In interdum, velit eget viverra suscipit, arcu sem sagittis est, ac efficitur nisl nunc nec velit. Nulla lorem metus, mollis quis fringilla in, porta eu nisl. Mauris semper felis varius purus viverra condimentum. Morbi eget massa sem. 
+              {{ data[0][9] }} 
             </span>
           </div>
         </div>
@@ -235,9 +251,18 @@
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-      <!-- Load in binary info into categories -->
+      <!-- Load in binary info into categories and get Youtube URL -->
       <script type="text/javascript">
         window.onload = function() {
+          var videoId = ('{{ data[0][10] }}');
+
+          var embedURL = "//www.youtube.com/embed/" + videoId;
+
+          if('{{ data[0][10] }}' == '')
+            embedURL = "//www.youtube.com/embed/lXbFu91a0t4"
+
+          document.getElementById("youtubeVid").src = embedURL;
+
           if ({{ data[0][7] }} == 0)
             document.getElementById('lim_mem').innerHTML = "Limited Spots: No"
           if ({{ data[0][7] }} == 1)
