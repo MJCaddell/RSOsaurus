@@ -18,7 +18,7 @@
           <!-- Sidebar navigation -->
 
           <form class="form-search">
-          <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
+          <ul id="slide-out" class="responsive-img side-nav fixed sn-bg-1 custom-scrollbar" style="padding-left:20px; padding-right:20px;">
               <!-- Logo -->
               <li>
                 <div class="logo-wrapper waves-light">
@@ -56,9 +56,9 @@
                       <li> <div class="input-field col s10">
                             <select id="time_commitment" name="time_commitment">
                               <option value="" disabled selected>Choose time commitment</option>
-                              <option value="1">Low</option>
-                              <option value="2">Medium</option>
-                              <option value="3">High</option>
+                              <option value="Low">Low</option>
+                              <option value="Medium">Medium</option>
+                              <option value="High">High</option>
                             </select>
                             <label>Time Commitment</label>
                           </div>
@@ -70,9 +70,9 @@
                       <li> <div class="input-field col s10">
                             <select multiple id="meeting_time" name="meeting_time">
                               <option value="" disabled selected>Anytime</option>
-                              <option value="1">Sports</option>
-                              <option value="2">Academics</option>
-                              <option value="3">Honors</option>
+                              <option value="Morning">Morning</option>
+                              <option value="Afternoon">Afternoon</option>
+                              <option value="Evening">Evening</option>
                             </select>
                             <label>Meeting Time</label>
                           </div>
@@ -84,9 +84,9 @@
                       <li> <div class="input-field col s10">
                             <select id="collected_dues" name="collected_dues">
                               <option value="" disabled selected>How much are you willing to pay?</option>
-                              <option value="1">20 or less</option>
-                              <option value="2">20 to 40</option>
-                              <option value="3">more than 40</option>
+                              <option value="20">20 or less</option>
+                              <option value="30">20 to 40</option>
+                              <option value="40">more than 40</option>
                             </select>
                             <label>Collects dues?</label>
                           </div>
@@ -98,9 +98,9 @@
                       <li> <div class="input-field col s10">
                             <select id="level_of_activity" name="level_of_activity">
                               <option value="" disabled selected>Don't care</option>
-                              <option value="1">Low</option>
-                              <option value="2">Medium</option>
-                              <option value="3">High</option>
+                              <option value="Low">Low</option>
+                              <option value="Medium">Medium</option>
+                              <option value="High">High</option>
                             </select>
                             <label>Level of Activity</label>
                           </div>
@@ -113,8 +113,8 @@
                       <li> <div class="input-field col s10">
                             <select id="longevity" name="longevity">
                               <option value="" disabled selected>Don't care</option>
-                              <option value="1">Old</option>
-                              <option value="2">New</option>
+                              <option value="Old">Old</option>
+                              <option value="New">New</option>
                             </select>
                             <label>Longevity</label>
                           </div>
@@ -167,16 +167,16 @@
                 <div class="card" style="width: 100%;">
                   <a href="rso?name={{ data[i][0] }}" id="rsoLink" name="{{ data[i][0] }}" >
                     <div class="card-image waves-effect waves-block waves-light" style="height: 180px; width: 100%; overflow: hidden">
-                      <img src="../static/cycle.jpg">
+                      <img src={{ data[i][13] }}>
                       <span class="card-title">{{ data[i][0] }}</span>
                     </div>
                   </a>
                   <div class="card-content">
-                    <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">I am a very simple card. I am good at containing small bits ...<i class="material-icons right">more_vert</i></span>
+                    <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i][9] }}<i class="material-icons right">more_vert</i></span>
                   </div>
                   <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{ data[i][0] }}<i class="material-icons right">close</i></span>
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                    <p>{{ data[i][9] }}</p>
                   </div>
                 </div>
               </div>
@@ -186,36 +186,19 @@
                 <div class="card" style="width: 100%;">
                   <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
                     <div class="card-image waves-effect waves-block waves-light" style="height: 180px; width: 100%; overflow: hidden">
-                      <img src="../static/cycle.jpg">
+                      <img src={{ data[i+1][13] }}>
                       <span class="card-title">{{ data[i+1][0] }}</span>
                     </div>
                   </a>
                   <div class="card-content">
-                    <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">I am a very simple card. I am good at containing small bits ...<i class="material-icons right">more_vert</i></span>
+                    <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i+1][9] }}<i class="material-icons right">more_vert</i></span>
                   </div>
                   <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{ data[i+1][0] }}<i class="material-icons right">close</i></span>
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                    <p>{{ data[i+1][9] }}</p>
                   </div>
                 </div>
               </div>
-              <!--
-              <div class="col s12 m6">
-                <a href="#">
-									<div class="card" style="width: 100%;">
-                    <a id="rsoLink", style="height: 100%; width: 100%", name={{ data[i+1][0] }} >
-                      <div class="card-image" style="height: 220px; width: 100%; overflow: hidden">
-                        <img src="http://nanaimomountainbikeclub.com/new/wp-content/uploads/2012/08/Feb.-15-020-1024x768.jpg">
-                        <span class="card-title">
-                          <p>{{ data[i+1][0] }}</p>
-                          <p style="font-size: 16px">I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                        </span>
-                      </div>
-                    </a>
-                  </div>
-                </a>
-              </div>
-              -->
               {% endif %}
             </div>
           {% endfor %}
