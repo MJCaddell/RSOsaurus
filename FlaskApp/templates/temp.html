@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col s12 m6">
       <div class="card" style="width: 100%;">
-        <a href="rso_dummy.html">
+        <a href="rso?name={{ data[i][0] }}" id="rsoLink" name="{{ data[i][0] }}" >
           <div class="card-image waves-effect waves-block waves-light" style="height: 180px; width: 100%; overflow: hidden">
-            <img src={{ data[i][23] }}>
+            <img src={{ data[i][13] }}>
             <span class="card-title">{{ data[i][0] }}</span>
           </div>
         </a>
@@ -12,7 +12,7 @@
           <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i][9] }}<i class="material-icons right">more_vert</i></span>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Men's Hockey Club<i class="material-icons right">close</i></span>
+          <span class="card-title grey-text text-darken-4">{{ data[i][0] }}<i class="material-icons right">close</i></span>
           <p>{{ data[i][9] }}</p>
         </div>
       </div>
@@ -21,9 +21,9 @@
     {% if data|length > i+1 %}
     <div class="col s12 m6">
       <div class="card" style="width: 100%;">
-        <a href="rso_dummy.html">
+        <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
           <div class="card-image waves-effect waves-block waves-light" style="height: 180px; width: 100%; overflow: hidden">
-            <img src={{ data[i+1][23] }}>
+            <img src={{ data[i+1][13] }}>
             <span class="card-title">{{ data[i+1][0] }}</span>
           </div>
         </a>
@@ -31,7 +31,7 @@
           <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i+1][9] }}<i class="material-icons right">more_vert</i></span>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Men's Hockey Club<i class="material-icons right">close</i></span>
+          <span class="card-title grey-text text-darken-4">{{ data[i+1][0] }}<i class="material-icons right">close</i></span>
           <p>{{ data[i+1][9] }}</p>
         </div>
       </div>
