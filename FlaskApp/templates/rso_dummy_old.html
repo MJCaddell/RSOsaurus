@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="../static/local.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+      <script src='lib/jquery.min.js'></script>
+      <script src='lib/moment.min.js'></script>
+      <script src='fullcalendar/fullcalendar.js'></script>
+      <script type="text/javascript">
+        $(document).ready(function() {
+
+            // page is now ready, initialize the calendar...
+
+            $('#calendar').fullCalendar({
+                // put your options and callbacks here
+            })
+
+        });
+      </script>
+    </head>
+
+    <body>
+
+      <!--Double navigation-->
+      <header>
+          <!-- Sidebar navigation -->
+
+          <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
+              <!-- Logo -->
+              <li>
+                  <div class="logo-wrapper waves-light">
+                      <a href="#"><img src="../static/images/logo.png" class="responsive-img"></a>
+                  </div>
+              </li>
+              <!--/. Logo -->
+              <!--Social-->
+              
+              <!--/Social-->
+              <!--Search Form-->
+              <li>
+                  <form>
+                    <div class="input-field gray">
+                      <input placeholder="RSO Name..." id="search" type="search" required>
+                    </div>
+                  </form>
+              </li>
+              <!--/.Search Form-->
+              <!-- Side navigation links -->
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select multiple>
+                              <option value="" disabled selected>Choose RSO category</option>
+                              <option value="1">Sports</option>
+                              <option value="2">Academics</option>
+                              <option value="3">Honors</option>
+                            </select>
+                            <label>Category</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select>
+                              <option value="" disabled selected>Choose time commitment</option>
+                              <option value="1">Low</option>
+                              <option value="2">Medium</option>
+                              <option value="3">High</option>
+                            </select>
+                            <label>Time Commitment</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select multiple>
+                              <option value="" disabled selected>Anytime</option>
+                              <option value="1">Sports</option>
+                              <option value="2">Academics</option>
+                              <option value="3">Honors</option>
+                            </select>
+                            <label>Meeting Time</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select>
+                              <option value="" disabled selected>How much are you willing to pay?</option>
+                              <option value="1">20 or less</option>
+                              <option value="2">20 to 40</option>
+                              <option value="3">more than 40</option>
+                            </select>
+                            <label>Collects dues?</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select>
+                              <option value="" disabled selected>Don't care</option>
+                              <option value="1">Low</option>
+                              <option value="2">Medium</option>
+                              <option value="3">High</option>
+                            </select>
+                            <label>Level of Activity</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select>
+                              <option value="" disabled selected>Don't care</option>
+                              <option value="1">Old</option>
+                              <option value="2">New</option>
+                            </select>
+                            <label>Longevity</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+
+              <li>
+                <form action="#">
+                    <p>
+                      <input type="checkbox" id="limited_membership" />
+                      <label for="limited_membership">Limited Membership</label>
+                    </p>
+                    <p>
+                      <input type="checkbox" id="recruitment_process" />
+                      <label for="recruitment_process">Recruitment Process</label>
+                    </p>
+                  </form>
+              </li>
+
+              <li>
+                <a class="waves-effect waves-light btn red"><i class="material-icons">search</i>Search RSOs</a>
+              </li>
+              <!--/. Side navigation links -->
+              <div class="sidenav-bg mask-strong"></div>
+          </ul>
+          <!--/. Sidebar navigation -->
+          <!-- Navbar -->
+          <!-- ADD <div class="navbar-fixed"> TO MAKE THE NAVBAR FIXED. -->
+          <div >
+            <nav>
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+              <a class="waves-effect waves-light btn-small black right"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
+              <div class="nav-wrapper blue">     
+                <ul id="nav" class="left ">
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <!-- /.Navbar -->
+        <div class="row">
+          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Category: {{ data[0][1] }}</p>
+          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Meeting Time: {{ data[0][3] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Time Commitment: {{ data[0][2] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Dues Collected: ${{ data[0][4] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Activity Level: {{ data[0][5] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Longevity: {{ data[0][6] }}</p>
+          <p class="col l2" id="lim_mem" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px"></p>
+          <p class="col l2" id="recruit" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px"></p>
+        </div>
+      </header>
+      <!--/.Double navigation-->
+      <!--Main layout-->
+      <main>
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="video-container">
+              <iframe id= "youtubeVid" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="col s12 m6">
+            <h4 align="center">{{ data[0][0] }}</h4>
+            <span font-size=8px>
+              {{ data[0][9] }} 
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <p style="text-align: center">
+              <iframe src="https://calendar.google.com/calendar/embed?src=2ph3qfm7gp38mnnlddo851l494%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="500" height="375" frameborder="0" scrolling="no"></iframe>
+            </p>
+          </div>
+
+          <div class="col s12 m6">
+            <h4 align="center">Key Members</h4>
+            <div class="row">
+              <div class="col s12 m6">
+                <img class="materialboxed" data-caption="This is our President, Lord, and Savior, the Happy Nerd Man." width="250" src="../static/images/member_img_1.jpg">
+              </div>
+              <div class="col s12 m6">
+                <img class="materialboxed" data-caption="Smile's are wonderful members." width="250" src="../static/images/member_img_2.jpg">
+              </div>
+            </div>
+            <h5 align="center">Contact Info</h5>
+            <p style="text-align: center">
+              <a class="waves-effect waves-light btn red" style="width: 150px; text-align: center"><i class="material-icons" style="margin-right: 10px; vertical-align: middle">email</i>Email Us</a>
+            </p>
+          </div>
+        </div>
+      </main>
+      <!--/Main layout-->
+
+      <!--Footer-->
+      <footer>
+
+      </footer>
+      <!--Footer--> 
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="../static/js/materialize.min.js"></script>
+      <script>
+      // Initialize collapse button
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+        $('.materialboxed').materialbox();
+        // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+        });
+      </script>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="../static/node_modules/materialize-css/dist/css/materialize.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+      <!-- Load in binary info into categories and get Youtube URL -->
+      <script type="text/javascript">
+        window.onload = function() {
+          var videoId = ('{{ data[0][10] }}');
+
+          var embedURL = "//www.youtube.com/embed/" + videoId;
+
+          if('{{ data[0][10] }}' == '')
+            embedURL = "//www.youtube.com/embed/lXbFu91a0t4"
+
+          document.getElementById("youtubeVid").src = embedURL;
+
+          if ({{ data[0][7] }} == 0)
+            document.getElementById('lim_mem').innerHTML = "Limited Spots: No"
+          if ({{ data[0][7] }} == 1)
+            document.getElementById('lim_mem').innerHTML = "Limited Spots: Yes"
+          if ({{ data[0][8] }} == 0)
+            document.getElementById('recruit').innerHTML = "Recruits: No"
+          if ({{ data[0][8] }} == 1)
+            document.getElementById('recruit').innerHTML = "Recruits: Yes"
+        }
+      </script>
+      
+    </body>
+  </html>

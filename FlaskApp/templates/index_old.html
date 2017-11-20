@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../static/css/materialize.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="../static/local.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+
+      <!--Double navigation-->
+      <header>
+          <!-- Sidebar navigation -->
+
+          <form class="form-search">
+          <ul id="slide-out" class="responsive-img side-nav fixed sn-bg-1 custom-scrollbar" style="padding-left:20px; padding-right:20px;">
+              <!-- Logo -->
+              <li>
+                <div class="logo-wrapper waves-light">
+                    <a href="#"><img src="../static/images/logo_old.png" class="responsive-img"></a>
+                </div>
+              </li>
+              <!--/. Logo -->
+              <!--Social-->
+              
+              <!--/Social-->
+              <!--Search Form-->
+              <li>
+                <div class="input-field gray">
+                  <input placeholder="RSO Name..." id="search" name="search" type="search" required>
+                </div>
+              </li>
+              <!--/.Search Form-->
+              <!-- Side navigation links -->
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select multiple id="category" name="category">
+                              <option value="" disabled selected>Choose RSO category</option>
+                              <option value="Sports">Sports</option>
+                              <option value="Academics">Academics</option>
+                              <option value="Games">Games</option>
+                              <option value="Social">Social</option>
+                            </select>
+                            <label for="category">Category</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select id="time_commitment" name="time_commitment">
+                              <option value="" disabled selected>Choose time commitment</option>
+                              <option value="Low">Low</option>
+                              <option value="Medium">Medium</option>
+                              <option value="High">High</option>
+                            </select>
+                            <label>Time Commitment</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select multiple id="meeting_time" name="meeting_time">
+                              <option value="" disabled selected>Anytime</option>
+                              <option value="Morning">Morning</option>
+                              <option value="Afternoon">Afternoon</option>
+                              <option value="Evening">Evening</option>
+                            </select>
+                            <label>Meeting Time</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select id="collected_dues" name="collected_dues">
+                              <option value="" disabled selected>How much are you willing to pay?</option>
+                              <option value="20">20 or less</option>
+                              <option value="30">20 to 40</option>
+                              <option value="40">more than 40</option>
+                            </select>
+                            <label>Collects dues?</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select id="level_of_activity" name="level_of_activity">
+                              <option value="" disabled selected>Don't care</option>
+                              <option value="Low">Low</option>
+                              <option value="Medium">Medium</option>
+                              <option value="High">High</option>
+                            </select>
+                            <label>Level of Activity</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10">
+                            <select id="longevity" name="longevity">
+                              <option value="" disabled selected>Don't care</option>
+                              <option value="Old">Old</option>
+                              <option value="New">New</option>
+                            </select>
+                            <label>Longevity</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+
+              <li>
+                  <p>
+                    <input type="checkbox" id="limited_membership" name="limited_membership" />
+                    <label for="limited_membership">Limited Membership</label>
+                  </p>
+                  <p>
+                    <input type="checkbox" id="recruitment_process" name="recruitment_process"/>
+                    <label for="recruitment_process">Recruitment Process</label>
+                  </p>
+              </li>
+
+              <li>
+                <a id="btnSearch" class="waves-effect waves-light btn red"><i class="material-icons">search</i>Search RSOs</a>
+              </li>
+              <!--/. Side navigation links -->
+              <div class="sidenav-bg mask-strong"></div>
+          </ul>
+        </form>
+          <!--/. Sidebar navigation -->
+          <!-- Navbar -->
+          <!-- ADD <div class="navbar-fixed"> TO MAKE THE NAVBAR FIXED. -->
+          <div >
+            <nav>
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+              <a class="waves-effect waves-light btn-small black right"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
+              <div class="nav-wrapper blue">     
+                <ul id="nav" class="left ">
+                </ul>
+              </div>
+            </nav>
+          </div>
+          <!-- /.Navbar -->
+      </header>
+      <!--/.Double navigation-->
+      <!--Main layout-->
+      <main>
+
+        <h3>Relevant</h3>
+        <div id="relevant_rsos">
+          {% for i in range(0,data|length,2) %}
+            <div class="row">
+              <div class="col s12 m6">
+                <div class="card" style="width: 100%;">
+                  <a href="rso?name={{ data[i][0] }}" id="rsoLink" name="{{ data[i][0] }}" >
+                    <div class="card-image waves-effect waves-block waves-light" style="height: 180px; width: 100%; overflow: hidden">
+                      <img src={{ data[i][13] }}>
+                      <span class="card-title">{{ data[i][0] }}</span>
+                    </div>
+                  </a>
+                  <div class="card-content">
+                    <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i][9][:50] }}...<i class="material-icons right">more_vert</i></span>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ data[i][0] }}<i class="material-icons right">close</i></span>
+                    <p>{{ data[i][9] }}</p>
+                  </div>
+                </div>
+              </div>
+
+              {% if data|length > i+1 %}
+              <div class="col s12 m6">
+                <div class="card" style="width: 100%;">
+                  <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
+                    <div class="card-image waves-effect waves-block waves-light" style="height: 180px; width: 100%; overflow: hidden">
+                      <img src={{ data[i+1][13] }}>
+                      <span class="card-title">{{ data[i+1][0] }}</span>
+                    </div>
+                  </a>
+                  <div class="card-content">
+                    <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i+1][9][:50] }}...<i class="material-icons right">more_vert</i></span>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ data[i+1][0] }}<i class="material-icons right">close</i></span>
+                    <p>{{ data[i+1][9] }}</p>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+
+        <h3>Less Relevant</h3>
+
+          {% for i in range(0,data|length,4) %}
+              <div class="row">
+                <div class="col s12 m3">
+                  <div class="card" style="width: 100%;">
+                    <a href="rso?name={{ data[i][0] }}" id="rsoLink" name="{{ data[i][0] }}" >
+                      <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
+                        <img src={{ data[i][13] }}>
+                        <span class="card-title">{{ data[i][0] }}</span>
+                      </div>
+                    </a>
+                    <div class="card-content">
+                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i][9][:20] }}...<i class="material-icons right">more_vert</i></span>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">{{ data[i][0] }}<i class="material-icons right">close</i></span>
+                      <p>{{ data[i][9] }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {% if data|length > i+1 %}
+                <div class="col s12 m3">
+                  <div class="card" style="width: 100%;">
+                    <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
+                      <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
+                        <img src={{ data[i+1][13] }}>
+                        <span class="card-title">{{ data[i+1][0] }}</span>
+                      </div>
+                    </a>
+                    <div class="card-content">
+                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i+1][9][:20] }}...<i class="material-icons right">more_vert</i></span>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">{{ data[i+1][0] }}<i class="material-icons right">close</i></span>
+                      <p>{{ data[i+1][9] }}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if data|length > i+2 %}
+                <div class="col s12 m3">
+                  <div class="card" style="width: 100%;">
+                    <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
+                      <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
+                        <img src={{ data[i+2][13] }}>
+                        <span class="card-title">{{ data[i+2][0] }}</span>
+                      </div>
+                    </a>
+                    <div class="card-content">
+                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i+2][9][:20] }}...<i class="material-icons right">more_vert</i></span>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">{{ data[i+2][0] }}<i class="material-icons right">close</i></span>
+                      <p>{{ data[i+2][9] }}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if data|length > i+3 %}
+                <div class="col s12 m3">
+                  <div class="card" style="width: 100%;">
+                    <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
+                      <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
+                        <img src={{ data[i+3][13] }}>
+                        <span class="card-title">{{ data[i+3][0] }}</span>
+                      </div>
+                    </a>
+                    <div class="card-content">
+                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i+3][9][:20] }}...<i class="material-icons right">more_vert</i></span>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">{{ data[i+3][0] }}<i class="material-icons right">close</i></span>
+                      <p>{{ data[i+3][9] }}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+              </div>
+            {% endfor %}
+          
+      </main>
+      <!--/Main layout-->
+
+      <!--Footer-->
+      <footer>
+
+      </footer>
+      <!--Footer--> 
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="../static/js/materialize.min.js"></script>
+      <script>
+      // Initialize collapse button
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+
+        $(function() {
+            $('#btnSearch').click(function() {
+                console.log("GET DATA")
+                console.log($('form'))
+                $.ajax({
+                    url: '/search',
+                    data: $('form').serialize(),
+                    type: 'POST',
+                    success: function(response) {
+                        console.log(response);
+                        $("#relevant_rsos").empty();
+                        $("#relevant_rsos").append(response);
+
+                    },
+                    error: function(error) {
+                        console.log(error);
+                    }
+                });
+            });
+        });
+        $(function() {
+          $('#rsoLink').click(function() {
+            console.log("RETRIEVING RSO INFO FOR PAGE")
+            $.ajax({
+              url: '/rso',
+              data: {
+                name: $(this).attr('name')
+              },
+              type: 'GET',
+              success: function(response) {
+                console.log(response);
+              },
+              error: function(error) {
+                console.log(error);
+              }
+            });
+          });
+        });
+        });
+      </script>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="../static/node_modules/materialize-css/dist/css/materialize.css">
+
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      
+    </body>
+  </html>

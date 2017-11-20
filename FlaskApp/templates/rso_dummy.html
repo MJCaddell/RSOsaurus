@@ -31,14 +31,26 @@
 
       <!--Double navigation-->
       <header>
+          <!-- Navbar -->
+          <div>
+            <nav>
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+              <a class="waves-effect waves-light btn-small right" style="background-color: #636363; width:160px; height:100%; padding-right: 2px; padding-left: 3px"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
+              <div class="nav-wrapper" style="background-color: tomato">     
+                <ul id="nav" class="left ">
+                </ul>
+              </div>
+            </nav>
+          </div>
+
           <!-- Sidebar navigation -->
 
-          <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
+          <ul id="slide-out" class="side-nav fixed sn-bg-1" style="padding-left:8px; padding-right:15px; width:260px;">
               <!-- Logo -->
-              <li>
-                  <div class="logo-wrapper waves-light">
-                      <a href="#"><img src="../static/images/logo.png" class="responsive-img"></a>
-                  </div>
+              <li style="padding-left:0px; padding-right:0px; width:260px; height: 65px; background-color: tomato;">
+                <div class="logo-wrapper waves-light">
+                    <a href="#"><img src="../static/images/logo.jpg" class="responsive-img"></a>
+                </div>
               </li>
               <!--/. Logo -->
               <!--Social-->
@@ -46,17 +58,18 @@
               <!--/Social-->
               <!--Search Form-->
               <li>
-                  <form>
-                    <div class="input-field gray">
-                      <input placeholder="RSO Name..." id="search" type="search" required>
-                    </div>
-                  </form>
+                <form>
+                  <div class="input-field" style="width:200px; padding-left:40px;">
+                    <input style="padding-left:10px" placeholder="RSO Name..." id="search" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  </div>
+                </form>
               </li>
               <!--/.Search Form-->
               <!-- Side navigation links -->
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
                             <select multiple>
                               <option value="" disabled selected>Choose RSO category</option>
                               <option value="1">Sports</option>
@@ -70,7 +83,7 @@
               </li>
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
                             <select>
                               <option value="" disabled selected>Choose time commitment</option>
                               <option value="1">Low</option>
@@ -84,7 +97,7 @@
               </li>
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
                             <select multiple>
                               <option value="" disabled selected>Anytime</option>
                               <option value="1">Sports</option>
@@ -98,7 +111,7 @@
               </li>
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
                             <select>
                               <option value="" disabled selected>How much are you willing to pay?</option>
                               <option value="1">20 or less</option>
@@ -112,7 +125,7 @@
               </li>
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
                             <select>
                               <option value="" disabled selected>Don't care</option>
                               <option value="1">Low</option>
@@ -127,7 +140,7 @@
 
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
                             <select>
                               <option value="" disabled selected>Don't care</option>
                               <option value="1">Old</option>
@@ -140,7 +153,7 @@
               </li>
 
               <li>
-                <form action="#">
+                <form action="#" style="padding-left:10px;">
                     <p>
                       <input type="checkbox" id="limited_membership" />
                       <label for="limited_membership">Limited Membership</label>
@@ -153,39 +166,29 @@
               </li>
 
               <li>
-                <a class="waves-effect waves-light btn red"><i class="material-icons">search</i>Search RSOs</a>
+                <a class="waves-effect waves-light btn red" style="width: 170px; margin-left: 70px"><i class="material-icons" style="width: 10px; color: white">search</i>Search</a>
               </li>
               <!--/. Side navigation links -->
               <div class="sidenav-bg mask-strong"></div>
           </ul>
           <!--/. Sidebar navigation -->
-          <!-- Navbar -->
-          <!-- ADD <div class="navbar-fixed"> TO MAKE THE NAVBAR FIXED. -->
-          <div >
-            <nav>
-              <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-              <a class="waves-effect waves-light btn-small black right"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
-              <div class="nav-wrapper blue">     
-                <ul id="nav" class="left ">
-                </ul>
-              </div>
-            </nav>
-          </div>
-          <!-- /.Navbar -->
-        <div class="row">
-          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Category: {{ data[0][1] }}</p>
-          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Meeting Time: {{ data[0][3] }}</p>
-          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Time Commitment: {{ data[0][2] }}</p>
-          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Dues Collected: ${{ data[0][4] }}</p>
-          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Activity Level: {{ data[0][5] }}</p>
-          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px">Longevity: {{ data[0][6] }}</p>
-          <p class="col l2" id="lim_mem" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px"></p>
-          <p class="col l2" id="recruit" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; color: white; padding: 0; background-color: #ff6347; height: 50px"></p>
-        </div>
+
       </header>
       <!--/.Double navigation-->
+
       <!--Main layout-->
       <main>
+        <div class="row">
+          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Category:<br>{{ data[0][1] }}</p>
+          <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Meeting Time:<br>{{ data[0][3] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Time Commitment:<br>{{ data[0][2] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Dues Collected:<br>${{ data[0][4] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Activity Level:<br>{{ data[0][5] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Longevity:<br>{{ data[0][6] }}</p>
+          <p class="col l2" id="lim_mem" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px"></p>
+          <p class="col l2" id="recruit" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px"></p>
+        </div>
+
         <div class="row">
           <div class="col s12 m6">
             <div class="video-container">
@@ -224,6 +227,63 @@
             </p>
           </div>
         </div>
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="month">      
+              <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li>
+                  August<br>
+                  <span style="font-size:18px">2017</span>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="weekdays">
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thr</li>
+              <li>Fri</li>
+              <li>Sat</li>
+              <li>Sun</li>
+            </ul>
+
+            <ul class="days">  
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li><span class="active">10</span></li>
+              <li>11</li>
+              <li>12</li>
+              <li>13</li>
+              <li>14</li>
+              <li>15</li>
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li>19</li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+              <li>23</li>
+              <li>24</li>
+              <li>25</li>
+              <li>26</li>
+              <li>27</li>
+              <li>28</li>
+              <li>29</li>
+              <li>30</li>
+              <li>31</li>
+            </ul>
+          </div>
       </main>
       <!--/Main layout-->
 

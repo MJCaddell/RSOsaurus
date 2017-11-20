@@ -10,7 +10,7 @@ app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 conn = mdb.connect( host = "localhost",
              user = "root",
-             #passwd = "root",
+             passwd = "root",
              db = "RSOsaurusDB")
 
 cursor = conn.cursor()
@@ -83,6 +83,7 @@ def search():
     cursor.execute(query, query_dims)
 
     data = cursor.fetchall()
+
     return render_template('temp.html', data = data)
 
 @app.route('/rso', methods=['GET'])
