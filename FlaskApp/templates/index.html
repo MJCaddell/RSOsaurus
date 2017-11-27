@@ -20,7 +20,7 @@
           <div class="nav-wrapper">
             <nav style="background-color:#E84A27">
                 <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>        
-                <a class="waves-effect waves-light btn-small right" style="background-color: #636363; width:160px; height:100%; padding-right: 2px; padding-left: 3px"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
+                <a href="quiz" class="waves-effect waves-light btn-small right" style="background-color: #15294C; width:160px; height:100%; padding-right: 2px; padding-left: 3px"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
             </nav>
           </div>
           <!-- /.Navbar -->
@@ -49,7 +49,7 @@
               <!-- Side navigation links -->
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                      <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select multiple id="category" name="category">
                               <option value="" disabled selected>Choose RSO category</option>
                               <option value="Sports">Sports</option>
@@ -64,7 +64,7 @@
               </li>
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                      <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select id="time_commitment" name="time_commitment">
                               <option value="" disabled selected>Choose time commitment</option>
                               <option value="Low">Low</option>
@@ -77,8 +77,8 @@
                   </ul>
               </li>
               <li>
-                  <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select multiple id="meeting_time" name="meeting_time">
                               <option value="" disabled selected>Anytime</option>
                               <option value="Morning">Morning</option>
@@ -92,7 +92,7 @@
               </li>
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                      <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select id="collected_dues" name="collected_dues">
                               <option value="" disabled selected>Don't care</option>
                               <option value="20">20 or less</option>
@@ -106,7 +106,7 @@
               </li>
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                      <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select id="level_of_activity" name="level_of_activity">
                               <option value="" disabled selected>Don't care</option>
                               <option value="Low">Low</option>
@@ -121,13 +121,13 @@
 
               <li>
                   <ul class="collapsible collapsible-accordion">
-                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                      <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select id="longevity" name="longevity">
-                              <option value="" disabled selected>Don't care</option>
+                              <option value="" disabled selected>Indifferent</option>
                               <option value="Old">Old</option>
                               <option value="New">New</option>
                             </select>
-                            <label>Longevity</label>
+                            <label style="padding-top: -10px;">Longevity (RSO's age)</label>
                           </div>
                       </li>
                   </ul>
@@ -137,10 +137,12 @@
                   <p>
                     <input type="checkbox" id="limited_membership" name="limited_membership" />
                     <label for="limited_membership">Limited Membership</label>
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Are there limited spots in RSO?"><i class="tiny material-icons" style="color: white;">help</i></a>
                   </p>
                   <p>
                     <input type="checkbox" id="recruitment_process" name="recruitment_process"/>
                     <label for="recruitment_process">Recruitment Process</label>
+                    <a class="tooltipped" data-position="bottom" data-delay="50" data-tooltip="Is there a recruitment process?"><i class="tiny material-icons" style="color: white;">help</i></a>
                   </p>
               </li>
 
