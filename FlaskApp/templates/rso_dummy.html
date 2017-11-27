@@ -9,22 +9,6 @@
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-      <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
-      <script src='lib/jquery.min.js'></script>
-      <script src='lib/moment.min.js'></script>
-      <script src='fullcalendar/fullcalendar.js'></script>
-      <script type="text/javascript">
-        $(document).ready(function() {
-
-            // page is now ready, initialize the calendar...
-
-            $('#calendar').fullCalendar({
-                // put your options and callbacks here
-            })
-
-        });
-      </script>
     </head>
 
   <body style="background-color:#F4F4F2;">
@@ -110,7 +94,7 @@
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10" style="padding-left:10px;">
                             <select id="collected_dues" name="collected_dues">
-                              <option value="" disabled selected>How much are you willing to pay?</option>
+                              <option value="" disabled selected>Don't care</option>
                               <option value="20">20 or less</option>
                               <option value="30">20 to 40</option>
                               <option value="40">more than 40</option>
@@ -177,7 +161,7 @@
         <div class="row">
           <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Category:<br>{{ data[0][1] }}</p>
           <p class="col l2" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Meeting Time:<br>{{ data[0][3] }}</p>
-          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Time Commitment:<br>{{ data[0][2] }}</p>
+          <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Time Commit:<br>{{ data[0][2] }}</p>
           <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Dues Collected:<br>${{ data[0][4] }}</p>
           <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Activity Level:<br>{{ data[0][5] }}</p>
           <p class="col l1" style="text-align: center; width: 12.5%; border: 1px solid #eee; margin: 1px 0; padding: 0; color:#333333; background-color: sandybrown; height: 50px">Longevity:<br>{{ data[0][6] }}</p>
@@ -235,24 +219,36 @@
               <li>9</li>
               <li><span class="active">10</span></li>
               <li>11</li>
-              <li>12</li>
+              <li><span class="event">12
+                <span class="eventtext">What: Happy Hour!<br>When: 7pm<br>Where: Legends</span>
+              </span></li>  
               <li>13</li>
               <li>14</li>
-              <li>15</li>
+              <li><span class="event">15
+                <span class="eventtext">What: Meeting<br>When: 7pm<br>Where: Student Union</span>
+              </span></li> 
               <li>16</li>
               <li>17</li>
               <li>18</li>
-              <li>19</li>
+              <li><span class="event">19
+                <span class="eventtext">What: Happy Hour!<br>When: 7pm<br>Where: Legends</span>
+              </span></li> 
               <li>20</li>
               <li>21</li>
-              <li>22</li>
+              <li><span class="event">22
+                <span class="eventtext">What: Meeting<br>When: 7pm<br>Where: Student Union</span>
+              </span></li> 
               <li>23</li>
               <li>24</li>
               <li>25</li>
-              <li>26</li>
+              <li><span class="event">26
+                <span class="eventtext">What: Happy Hour!<br>When: 7pm<br>Where: Legends</span>
+              </span></li> 
               <li>27</li>
               <li>28</li>
-              <li>29</li>
+              <li><span class="event">29
+                <span class="eventtext">What: Meeting<br>When: 7pm<br>Where: Student Union</span>
+              </span></li> 
               <li>30</li>
               <li>31</li>
             </ul>
@@ -260,12 +256,14 @@
 
           <div class="col s12 m6">
             <h4 align="center">Key Members</h4>
-            <div class="row">
-              <div class="col s12 m6">
-                <img class="materialboxed" data-caption="This is our President, Lord, and Savior, the Happy Nerd Man." width="250" src="../static/images/member_img_1.jpg">
-              </div>
-              <div class="col s12 m6">
-                <img class="materialboxed" data-caption="Smile's are wonderful members." width="250" src="../static/images/member_img_2.jpg">
+            <div class="row" style="align: center;">
+              <div class="container">
+                <div class="col s12 m6">
+                  <img class="materialboxed" data-caption="This is our President, Lord, and Savior, the Happy Nerd Man." width="175" src="../static/images/member_img_1.jpg">
+                </div>
+                <div class="col s12 m6">
+                  <img class="materialboxed" data-caption="Smile's are wonderful members." width="175" src="../static/images/member_img_2.jpg">
+                </div>
               </div>
             </div>
             <h5 align="center">Contact Info</h5>
@@ -296,7 +294,7 @@
         });
       </script>
       <!-- Compiled and minified CSS -->
-      <link rel="stylesheet" href="../static/node_modules/materialize-css/dist/css/materialize.css">
+       <!-- <link rel="stylesheet" href="../static/node_modules/materialize-css/dist/css/materialize.css"> -->
 
       <!-- Compiled and minified JavaScript -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -313,14 +311,18 @@
 
           document.getElementById("youtubeVid").src = embedURL;
 
-          if ({{ data[0][7] }} == 0)
-            document.getElementById('lim_mem').innerHTML = "Limited Spots: No"
-          if ({{ data[0][7] }} == 1)
-            document.getElementById('lim_mem').innerHTML = "Limited Spots: Yes"
-          if ({{ data[0][8] }} == 0)
-            document.getElementById('recruit').innerHTML = "Recruits: No"
-          if ({{ data[0][8] }} == 1)
-            document.getElementById('recruit').innerHTML = "Recruits: Yes"
+          if ({{ data[0][7] }} == 0) {
+            document.getElementById('lim_mem').innerHTML = "Limited Positions: No"
+          }
+          if ({{ data[0][7] }} == 1) {
+            document.getElementById('lim_mem').innerHTML = "Limited Positions: Yes"
+          }
+          if ({{ data[0][8] }} == 0) {
+            document.getElementById('recruit').innerHTML = "Recruit Process: No"
+          }
+          if ({{ data[0][8] }} == 1) {
+            document.getElementById('recruit').innerHTML = "Recruit Process: Yes"
+          }
         }
       </script>
       

@@ -10,7 +10,7 @@ app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 conn = mdb.connect( host = "localhost",
              user = "root",
-             passwd = "root",
+             #passwd = "root",
              db = "RSOsaurusDB")
 
 cursor = conn.cursor()
@@ -94,7 +94,7 @@ def rso():
     query = (("SELECT * FROM rsoInfo WHERE name=\"")+name+"\"")
     cursor.execute(query)
     data = cursor.fetchall()
-    return render_template('rso_dummy.html', data=data)
+    return render_template('rso_dummy_chips.html', data=data)
 
 if __name__ == "__main__":
-    app.run(host= '0.0.0.0')
+    app.run()

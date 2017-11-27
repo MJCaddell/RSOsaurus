@@ -1,5 +1,5 @@
 main, footer {
-      padding-left: 300px;
+      padding-left: 260px;
     }
 
 @media only screen and (max-width : 992px) {
@@ -78,6 +78,30 @@ body {font-family: Verdana, sans-serif;}
   padding: 5px;
   background: tomato;
   color: white !important
+}
+
+.days li .event {
+  padding: 5px;
+  background: sandybrown;
+  color: white !important
+}
+
+.days li .event .eventtext {
+  visibility: hidden;
+  width: 10%;
+  background-color: #15294C;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.days li .event:hover .eventtext {
+    visibility: visible;
 }
 
 /* Add media queries for smaller screens */

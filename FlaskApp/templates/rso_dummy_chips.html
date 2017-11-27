@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="../static/css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="../static/local.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+  <body style="background-color:#F4F4F2;">
+
+      <!--Double navigation-->
+      <header>
+          <!-- Navbar -->
+          <!-- ADD <div class="navbar-fixed"> TO MAKE THE NAVBAR FIXED. -->
+          <div class="nav-wrapper">
+            <nav style="background-color:#E84A27">
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>        
+                <a class="waves-effect waves-light btn-small right" style="background-color: #15294C; width:160px; height:100%; padding-right: 2px; padding-left: 3px"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
+            </nav>
+          </div>
+          <!-- /.Navbar -->
+          <!-- Sidebar navigation -->
+          <form class="form-search">
+          <ul id="slide-out" class="side-nav fixed sn-bg-1" style="padding-left:0px; padding-right:15px; width:260px; background-color:#15294C; color:white;">
+              <!-- Logo -->
+              <li style="width:260px; height: 65px; background-color: #E84A27;">
+                <div class="logo-wrapper waves-light" >
+                    <!-- <a href="#"><img src="../static/images/logo.jpg" class="responsive-img"></a> -->
+                    <a href="#" style="color:white;font-family: 'Comic Sans MS'; font-size:250%; padding-left:30px;">RSOsaurus</a>
+                </div>
+              </li>
+              <!--/. Logo -->
+              <!--Social-->
+              
+              <!--/Social-->
+              <!--Search Form-->
+              <li>
+                <div class="input-field" style="width:200px; padding-left:40px;">
+                  <input style="padding-left:10px" placeholder="RSO Name..." id="search" name="search" type="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                </div>
+              </li>
+              <!--/.Search Form-->
+              <!-- Side navigation links -->
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                            <select multiple id="category" name="category">
+                              <option value="" disabled selected>Choose RSO category</option>
+                              <option value="Sports">Sports</option>
+                              <option value="Academics">Academics</option>
+                              <option value="Games">Games</option>
+                              <option value="Social">Social</option>
+                            </select>
+                            <label for="category">Category</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                            <select id="time_commitment" name="time_commitment">
+                              <option value="" disabled selected>Choose time commitment</option>
+                              <option value="Low">Low</option>
+                              <option value="Medium">Medium</option>
+                              <option value="High">High</option>
+                            </select>
+                            <label>Time Commitment</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                            <select multiple id="meeting_time" name="meeting_time">
+                              <option value="" disabled selected>Anytime</option>
+                              <option value="Morning">Morning</option>
+                              <option value="Afternoon">Afternoon</option>
+                              <option value="Evening">Evening</option>
+                            </select>
+                            <label>Meeting Time</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                            <select id="collected_dues" name="collected_dues">
+                              <option value="" disabled selected>Don't care</option>
+                              <option value="20">20 or less</option>
+                              <option value="30">20 to 40</option>
+                              <option value="40">more than 40</option>
+                            </select>
+                            <label>Collects dues?</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                            <select id="level_of_activity" name="level_of_activity">
+                              <option value="" disabled selected>Don't care</option>
+                              <option value="Low">Low</option>
+                              <option value="Medium">Medium</option>
+                              <option value="High">High</option>
+                            </select>
+                            <label>Level of Activity</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+
+              <li>
+                  <ul class="collapsible collapsible-accordion">
+                      <li> <div class="input-field col s10" style="padding-left:10px;">
+                            <select id="longevity" name="longevity">
+                              <option value="" disabled selected>Don't care</option>
+                              <option value="Old">Old</option>
+                              <option value="New">New</option>
+                            </select>
+                            <label>Longevity</label>
+                          </div>
+                      </li>
+                  </ul>
+              </li>
+
+              <li  style="padding-left: 10px;">
+                  <p>
+                    <input type="checkbox" id="limited_membership" name="limited_membership" />
+                    <label for="limited_membership">Limited Membership</label>
+                  </p>
+                  <p>
+                    <input type="checkbox" id="recruitment_process" name="recruitment_process"/>
+                    <label for="recruitment_process">Recruitment Process</label>
+                  </p>
+              </li>
+
+              <li>
+                <a id="btnSearch" class="waves-effect waves-light btn red" style="width: 170px; margin-left: 30px"><i class="material-icons" style="width: 10px; color: white">search</i>Search RSOs</a>
+              </li>
+              <!--/. Side navigation links -->
+              <div class="sidenav-bg mask-strong"></div>
+          </ul>
+        </form>
+        <!--/. Sidebar navigation -->
+          
+      </header>
+      <!--/.Double navigation-->
+
+      <!--Main layout-->
+      <main>
+        <div class="row" style="padding-left: 10px">
+          <p class="chip" style="background-color: sandybrown">Category: {{ data[0][1] }}</p>
+          <p class="chip" style="background-color: sandybrown">Meeting Time: {{ data[0][3] }}</p>
+          <p class="chip" style="background-color: sandybrown">Time Commit: {{ data[0][2] }}</p>
+          <p class="chip" style="background-color: sandybrown">Dues: ${{ data[0][4] }}</p>
+          <p class="chip" style="background-color: sandybrown">Activity Lvl: {{ data[0][5] }}</p>
+          <p class="chip" style="background-color: sandybrown">Age: {{ data[0][6] }}</p>
+          <p class="chip" id="lim_mem" style="background-color: sandybrown"></p>
+          <p class="chip" id="recruit" style="background-color: sandybrown"></p>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="video-container">
+              <iframe id= "youtubeVid" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <div class="col s12 m6">
+            <h4 align="center">{{ data[0][0] }}</h4>
+            <span font-size=8px>
+              {{ data[0][9] }} 
+            </span>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col s12 m6">
+            <div class="month">      
+              <ul>
+                <li class="prev">&#10094;</li>
+                <li class="next">&#10095;</li>
+                <li>
+                  August<br>
+                  <span style="font-size:18px">2017</span>
+                </li>
+              </ul>
+            </div>
+
+            <ul class="weekdays">
+              <li>Mon</li>
+              <li>Tue</li>
+              <li>Wed</li>
+              <li>Thr</li>
+              <li>Fri</li>
+              <li>Sat</li>
+              <li>Sun</li>
+            </ul>
+
+            <ul class="days">  
+              <li>1</li>
+              <li>2</li>
+              <li>3</li>
+              <li>4</li>
+              <li>5</li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+              <li>9</li>
+              <li><span class="active">10</span></li>
+              <li>11</li>
+              <li><span class="event">12
+                <span class="eventtext">What: Happy Hour!<br>When: 7pm<br>Where: Legends</span>
+              </span></li>  
+              <li>13</li>
+              <li>14</li>
+              <li><span class="event">15
+                <span class="eventtext">What: Meeting<br>When: 7pm<br>Where: Student Union</span>
+              </span></li> 
+              <li>16</li>
+              <li>17</li>
+              <li>18</li>
+              <li><span class="event">19
+                <span class="eventtext">What: Happy Hour!<br>When: 7pm<br>Where: Legends</span>
+              </span></li> 
+              <li>20</li>
+              <li>21</li>
+              <li><span class="event">22
+                <span class="eventtext">What: Meeting<br>When: 7pm<br>Where: Student Union</span>
+              </span></li> 
+              <li>23</li>
+              <li>24</li>
+              <li>25</li>
+              <li><span class="event">26
+                <span class="eventtext">What: Happy Hour!<br>When: 7pm<br>Where: Legends</span>
+              </span></li> 
+              <li>27</li>
+              <li>28</li>
+              <li><span class="event">29
+                <span class="eventtext">What: Meeting<br>When: 7pm<br>Where: Student Union</span>
+              </span></li> 
+              <li>30</li>
+              <li>31</li>
+            </ul>
+          </div>
+
+          <div class="col s12 m6">
+            <h4 align="center">Key Members</h4>
+            <div class="row" style="align: center;">
+              <div class="container">
+                <div class="col s12 m6">
+                  <img class="materialboxed" data-caption="This is our President, Lord, and Savior, the Happy Nerd Man." width="175" src="../static/images/member_img_1.jpg">
+                </div>
+                <div class="col s12 m6">
+                  <img class="materialboxed" data-caption="Smile's are wonderful members." width="175" src="../static/images/member_img_2.jpg">
+                </div>
+              </div>
+            </div>
+            <h5 align="center">Contact Info</h5>
+            <p style="text-align: center">
+              <a class="waves-effect waves-light btn red" style="width: 150px; text-align: center"><i class="material-icons" style="margin-right: 10px; vertical-align: middle">email</i>Email Us</a>
+            </p>
+          </div>
+        </div>
+      </main>
+      <!--/Main layout-->
+
+      <!--Footer-->
+      <footer>
+
+      </footer>
+      <!--Footer--> 
+
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="../static/js/materialize.min.js"></script>
+      <script>
+      // Initialize collapse button
+      $(document).ready(function(){
+        $(".button-collapse").sideNav();
+        $('select').material_select();
+        $('.materialboxed').materialbox();
+        // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+        });
+      </script>
+      <!-- Compiled and minified CSS -->
+      <!-- <link rel="stylesheet" href="../static/node_modules/materialize-css/dist/css/materialize.css"> -->
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+      <!-- Load in binary info into categories and get Youtube URL -->
+      <script type="text/javascript">
+        window.onload = function() {
+          var videoId = ('{{ data[0][10] }}');
+
+          var embedURL = "//www.youtube.com/embed/" + videoId;
+
+          if('{{ data[0][10] }}' == '')
+            embedURL = "//www.youtube.com/embed/lXbFu91a0t4"
+
+          document.getElementById("youtubeVid").src = embedURL;
+
+          if ({{ data[0][7] }} == 0) {
+            document.getElementById('lim_mem').innerHTML = "Limited Spots: No"
+          }
+          if ({{ data[0][7] }} == 1) {
+            document.getElementById('lim_mem').innerHTML = "Limited Spots: Yes"
+          }
+          if ({{ data[0][8] }} == 0) {
+            document.getElementById('recruit').innerHTML = "Recruit Process: No"
+          }
+          if ({{ data[0][8] }} == 1) {
+            document.getElementById('recruit').innerHTML = "Recruit Process: Yes"
+          }
+        }
+      </script>
+      
+    </body>
+  </html>
