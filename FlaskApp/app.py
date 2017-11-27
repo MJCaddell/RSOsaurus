@@ -97,4 +97,4 @@ def rso():
     return render_template('rso_dummy_chips.html', data=data)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
