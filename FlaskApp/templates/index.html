@@ -20,7 +20,7 @@
           <div class="nav-wrapper">
             <nav style="background-color:#E84A27">
                 <a href="/" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>        
-                <a href="quiz" class="waves-effect waves-light btn-small right" style="background-color: #15294C; width:160px; height:100%; padding-right: 2px; padding-left: 3px"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
+                <a href="quiz" class="waves-effect waves-light btn-small right" style="background-color: #15294C; width:12%; height:100%; padding-right: 2px; padding-left: 3px"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
             </nav>
           </div>
           <!-- /.Navbar -->
@@ -248,7 +248,7 @@
                 {% if ldata|length > i+2 %}
                 <div class="col s12 m3">
                   <div class="card" style="width: 100%;">
-                    <a href="rso?name={{ ldata[i+1][0] }}" id="rsoLink" name="{{ ldata[i+1][0] }}" >
+                    <a href="rso?name={{ ldata[i+2][0] }}" id="rsoLink" name="{{ ldata[i+1][0] }}" >
                       <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
                         <img src={{ ldata[i+2][13] }}>
                         <span class="card-title">{{ ldata[i+2][0] }}</span>
@@ -268,7 +268,7 @@
                 {% if ldata|length > i+3 %}
                 <div class="col s12 m3">
                   <div class="card" style="width: 100%;">
-                    <a href="rso?name={{ ldata[i+1][0] }}" id="rsoLink" name="{{ ldata[i+1][0] }}" >
+                    <a href="rso?name={{ ldata[i+3][0] }}" id="rsoLink" name="{{ ldata[i+1][0] }}" >
                       <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
                         <img src={{ ldata[i+3][13] }}>
                         <span class="card-title">{{ ldata[i+3][0] }}</span>
