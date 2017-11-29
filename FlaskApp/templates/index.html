@@ -19,7 +19,7 @@
           <!-- ADD <div class="navbar-fixed"> TO MAKE THE NAVBAR FIXED. -->
           <div class="nav-wrapper">
             <nav style="background-color:#E84A27">
-                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>        
+                <a href="/" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>        
                 <a href="quiz" class="waves-effect waves-light btn-small right" style="background-color: #15294C; width:160px; height:100%; padding-right: 2px; padding-left: 3px"><i class="material-icons left">short_text</i>Take RSO Quiz</a>
             </nav>
           </div>
@@ -31,7 +31,7 @@
               <li style="width:260px; height: 65px; background-color: #E84A27;">
                 <div class="logo-wrapper waves-light" >
                     <!-- <a href="#"><img src="../static/images/logo.jpg" class="responsive-img"></a> -->
-                    <a href="#" style="color:white;font-family: 'Comic Sans MS'; font-size:250%; padding-left:30px;">RSOsaurus</a>
+                    <a href="/" style="color:white;font-family: 'Comic Sans MS'; font-size:250%; padding-left:30px;">RSOsaurus</a>
                 </div>
               </li>
               <!--/. Logo -->
@@ -51,7 +51,7 @@
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select multiple id="category" name="category">
-                              <option value="" disabled selected>Choose RSO category</option>
+                              <option value="" disabled selected>Choose categories</option>
                               <option value="Sports">Sports</option>
                               <option value="Academics">Academics</option>
                               <option value="Games">Games</option>
@@ -94,7 +94,7 @@
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select id="collected_dues" name="collected_dues">
-                              <option value="" disabled selected>Don't care</option>
+                              <option value="" disabled selected>Undecided</option>
                               <option value="20">20 or less</option>
                               <option value="30">20 to 40</option>
                               <option value="40">more than 40</option>
@@ -108,7 +108,7 @@
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select id="level_of_activity" name="level_of_activity">
-                              <option value="" disabled selected>Don't care</option>
+                              <option value="" disabled selected>Undecided</option>
                               <option value="Low">Low</option>
                               <option value="Medium">Medium</option>
                               <option value="High">High</option>
@@ -123,7 +123,7 @@
                   <ul class="collapsible collapsible-accordion">
                       <li> <div class="input-field col s10" style="padding-left:10px; padding-top: 4px;">
                             <select id="longevity" name="longevity">
-                              <option value="" disabled selected>Indifferent</option>
+                              <option value="" disabled selected>Undecided</option>
                               <option value="Old">Old</option>
                               <option value="New">New</option>
                             </select>
@@ -205,81 +205,81 @@
 
         <h3 style="color:#636363; padding-left: 10px">Less Relevant</h3>
 
-          {% for i in range(0,data|length,4) %}
+          {% for i in range(0,ldata|length,4) %}
               <div class="row">
                 <div class="col s12 m3">
                   <div class="card" style="width: 100%;">
-                    <a href="rso?name={{ data[i][0] }}" id="rsoLink" name="{{ data[i][0] }}" >
+                    <a href="rso?name={{ ldata[i][0] }}" id="rsoLink" name="{{ ldata[i][0] }}" >
                       <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
-                        <img src={{ data[i][13] }}>
-                        <span class="card-title">{{ data[i][0] }}</span>
+                        <img src={{ ldata[i][13] }}>
+                        <span class="card-title">{{ ldata[i][0] }}</span>
                       </div>
                     </a>
                     <div class="card-content">
-                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i][9][:20] }}...<i class="material-icons right">more_vert</i></span>
+                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ ldata[i][9][:20] }}...<i class="material-icons right">more_vert</i></span>
                     </div>
                     <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">{{ data[i][0] }}<i class="material-icons right">close</i></span>
-                      <p>{{ data[i][9] }}</p>
+                      <span class="card-title grey-text text-darken-4">{{ ldata[i][0] }}<i class="material-icons right">close</i></span>
+                      <p>{{ ldata[i][9] }}</p>
                     </div>
                   </div>
                 </div>
 
-                {% if data|length > i+1 %}
+                {% if ldata|length > i+1 %}
                 <div class="col s12 m3">
                   <div class="card" style="width: 100%;">
-                    <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
+                    <a href="rso?name={{ ldata[i+1][0] }}" id="rsoLink" name="{{ ldata[i+1][0] }}" >
                       <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
-                        <img src={{ data[i+1][13] }}>
-                        <span class="card-title">{{ data[i+1][0] }}</span>
+                        <img src={{ ldata[i+1][13] }}>
+                        <span class="card-title">{{ ldata[i+1][0] }}</span>
                       </div>
                     </a>
                     <div class="card-content">
-                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i+1][9][:20] }}...<i class="material-icons right">more_vert</i></span>
+                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ ldata[i+1][9][:20] }}...<i class="material-icons right">more_vert</i></span>
                     </div>
                     <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">{{ data[i+1][0] }}<i class="material-icons right">close</i></span>
-                      <p>{{ data[i+1][9] }}</p>
-                    </div>
-                  </div>
-                </div>
-                {% endif %}
-
-                {% if data|length > i+2 %}
-                <div class="col s12 m3">
-                  <div class="card" style="width: 100%;">
-                    <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
-                      <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
-                        <img src={{ data[i+2][13] }}>
-                        <span class="card-title">{{ data[i+2][0] }}</span>
-                      </div>
-                    </a>
-                    <div class="card-content">
-                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i+2][9][:20] }}...<i class="material-icons right">more_vert</i></span>
-                    </div>
-                    <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">{{ data[i+2][0] }}<i class="material-icons right">close</i></span>
-                      <p>{{ data[i+2][9] }}</p>
+                      <span class="card-title grey-text text-darken-4">{{ ldata[i+1][0] }}<i class="material-icons right">close</i></span>
+                      <p>{{ ldata[i+1][9] }}</p>
                     </div>
                   </div>
                 </div>
                 {% endif %}
 
-                {% if data|length > i+3 %}
+                {% if ldata|length > i+2 %}
                 <div class="col s12 m3">
                   <div class="card" style="width: 100%;">
-                    <a href="rso?name={{ data[i+1][0] }}" id="rsoLink" name="{{ data[i+1][0] }}" >
+                    <a href="rso?name={{ ldata[i+1][0] }}" id="rsoLink" name="{{ ldata[i+1][0] }}" >
                       <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
-                        <img src={{ data[i+3][13] }}>
-                        <span class="card-title">{{ data[i+3][0] }}</span>
+                        <img src={{ ldata[i+2][13] }}>
+                        <span class="card-title">{{ ldata[i+2][0] }}</span>
                       </div>
                     </a>
                     <div class="card-content">
-                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ data[i+3][9][:20] }}...<i class="material-icons right">more_vert</i></span>
+                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ ldata[i+2][9][:20] }}...<i class="material-icons right">more_vert</i></span>
                     </div>
                     <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">{{ data[i+3][0] }}<i class="material-icons right">close</i></span>
-                      <p>{{ data[i+3][9] }}</p>
+                      <span class="card-title grey-text text-darken-4">{{ ldata[i+2][0] }}<i class="material-icons right">close</i></span>
+                      <p>{{ ldata[i+2][9] }}</p>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if ldata|length > i+3 %}
+                <div class="col s12 m3">
+                  <div class="card" style="width: 100%;">
+                    <a href="rso?name={{ ldata[i+1][0] }}" id="rsoLink" name="{{ ldata[i+1][0] }}" >
+                      <div class="card-image waves-effect waves-block waves-light" style="height: 100px; width: 100%; overflow: hidden">
+                        <img src={{ ldata[i+3][13] }}>
+                        <span class="card-title">{{ ldata[i+3][0] }}</span>
+                      </div>
+                    </a>
+                    <div class="card-content">
+                      <span class="card-title activator" style="font-size: 14px; font-family: Verdana;">{{ ldata[i+3][9][:20] }}...<i class="material-icons right">more_vert</i></span>
+                    </div>
+                    <div class="card-reveal">
+                      <span class="card-title grey-text text-darken-4">{{ ldata[i+3][0] }}<i class="material-icons right">close</i></span>
+                      <p>{{ ldata[i+3][9] }}</p>
                     </div>
                   </div>
                 </div>

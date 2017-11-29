@@ -10,16 +10,23 @@ app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 conn = mdb.connect( host = "localhost",
              user = "root",
-             #passwd = "root",
+             passwd = "root",
              db = "RSOsaurusDB")
 
 cursor = conn.cursor()
 
 @app.route("/", methods=['GET'])
 def main():
-    cursor.execute("SELECT * FROM rsoInfo")
-    data = cursor.fetchall()
-    return render_template('index.html', data = data)
+    if "reco" not in request.args:
+    	cursor.execute("SELECT * FROM rsoInfo")
+    	data = cursor.fetchall()
+    	less_rel_data = data
+    else:
+    	cursor.execute("SELECT * FROM rsoInfo ORDER BY RAND()")
+    	less_rel_data = cursor.fetchall()
+    	data = less_rel_data
+    	data = data[0:4]
+    return render_template('index.html', data = data, ldata = less_rel_data)
 
 @app.route('/search', methods=['POST'])
 def search():
