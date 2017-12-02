@@ -10,7 +10,7 @@ app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 conn = mdb.connect( host = "localhost",
              user = "root",
-             passwd = "root",
+             #passwd = "root",
              db = "RSOsaurusDB")
 
 cursor = conn.cursor()
