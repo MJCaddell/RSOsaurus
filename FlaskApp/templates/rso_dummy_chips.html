@@ -11,7 +11,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
 
-    <body style="background-color:#F4F4F2;">
+    <body style="background-color:#F4F4F2; height:100%;">
 
       <!--Double navigation-->
       <header>
@@ -31,29 +31,29 @@
       <!--Main layout-->
         <div class="row center" style="padding-left: 5px; vertical-align: middle;">
           <span class="container center">
-            <p class="chip" style="background-color: sandybrown">Category: {{ data[0][1] }}</p>
-            <p class="chip" style="background-color: sandybrown">Meeting Time: {{ data[0][3] }}</p>
-            <p class="chip" style="background-color: sandybrown">Time Commitment: {{ data[0][2] }}</p>
-            <p class="chip" style="background-color: sandybrown">Dues: ${{ data[0][4] }}</p>
-            <p class="chip" style="background-color: sandybrown">Activity Level: {{ data[0][5] }}</p>
-            <p class="chip" style="background-color: sandybrown">Longevity (Age): {{ data[0][6] }}</p>
-            <p class="chip" id="lim_mem" style="background-color: sandybrown"></p>
-            <p class="chip" id="recruit" style="background-color: sandybrown"></p>
+            <p class="chip" style="color: white; background-color: #E84A27;">Category: {{ data[0][1] }}</p>
+            <p class="chip" style="color: white; background-color: #E84A27;">Meeting Time: {{ data[0][3] }}</p>
+            <p class="chip" style="color: white; background-color: #E84A27;">Time Commitment: {{ data[0][2] }}</p>
+            <p class="chip" style="color: white; background-color: #E84A27;">Dues: ${{ data[0][4] }}</p>
+            <p class="chip" style="color: white; background-color: #E84A27;">Activity Level: {{ data[0][5] }}</p>
+            <p class="chip" style="color: white; background-color: #E84A27;">Longevity (Age): {{ data[0][6] }}</p>
+            <p class="chip" id="lim_mem" style="color: white; background-color: #E84A27;"></p>
+            <p class="chip" id="recruit" style="color: white; background-color: #E84A27;"></p>
           </span>
         </div>
 
         <div class="row">
           <div class="col s12 m6">
             <div class="video-container">
-              <iframe id= "youtubeVid" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+              <iframe id= "youtubeVid" src="" frameborder="0" allowfullscreen></iframe>
             </div>
           </div>
 
           <div class="col s12 m6">
             <h4 align="center">{{ data[0][0] }}</h4>
             <span font-size=8px>
-              {{ data[0][9] }} Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</br></br>
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+              {{ data[0][9] }} Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</br>
+              It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </span>
           </div>
         </div>
@@ -65,7 +65,7 @@
                 <li class="prev">&#10094;</li>
                 <li class="next">&#10095;</li>
                 <li>
-                  August<br>
+                  December<br>
                   <span style="font-size:18px">2017</span>
                 </li>
               </ul>
@@ -82,7 +82,7 @@
             </ul>
 
             <ul class="days">  
-              <li>1</li>
+              <li><span class="active">1</span></li>
               <li>2</li>
               <li>3</li>
               <li>4</li>
@@ -91,7 +91,7 @@
               <li>7</li>
               <li>8</li>
               <li>9</li>
-              <li><span class="active">10</span></li>
+              <li>10</li>
               <li>11</li>
               <li><a class="event tooltipped" data-html="true" data-delay="50" data-tooltip="What: Happy Hour!<br>When: 7pm<br>Where: Legends">12</a></li>  
               <li>13</li>
@@ -136,7 +136,7 @@
               someone@email.com
             </p>
         </div>
-
+      </div>
       <!--/Main layout-->
 
       <!--Footer-->
